@@ -1,0 +1,26 @@
+<button (click)="initNewHero()">Create New Journal</button>
+
+<table>
+  <thead>
+    <th>| Student | </th>
+    <th>ExamMark | </th>
+    <th>VisitPercentage | </th>
+    <th>Sum |</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let hero of heroes">
+      <td>{{ hero.studentId }}</td>
+      <td>{{ hero.examMark }}</td>
+      <td>{{ hero.visitPercentage }}</td>
+      <td><button (click)="editHero(hero)">Edit</button></td>
+    </tr>
+
+
+  </tbody>
+</table>
+
+<app-edit-hero
+  [hero]="heroToEdit"
+  (heroesUpdated)="updateHeroList($event)"
+></app-edit-hero>

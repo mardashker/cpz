@@ -1,0 +1,18 @@
+<div *ngIf="hero">
+  <h2>{{ hero.studentId }}</h2>
+  <div>
+    Exam Mark:
+    <input [(ngModel)]="hero.examMark" placeholder="0" />
+  </div>
+  <div>
+    Visit Percentage:
+    <input [(ngModel)]="hero.visitPercentage" placeholder="50%" />
+  </div>
+  <div>
+    Student Name:
+    <input [(ngModel)]="hero.studentId" placeholder="Student`s Name" />
+  </div>
+  <button (click)="updateHero(hero)" *ngIf="hero.id">Save</button>
+  <button (click)="deleteHero(hero)" *ngIf="hero.id">Delete</button>
+  <button (click)="createHero(hero)" *ngIf="!hero.id">Create</button>
+</div>
